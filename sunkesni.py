@@ -29,26 +29,26 @@ print(count1)
 # print("--------")
 # Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais. Po paskutinio skaičiaus kablelio neturi būti.
 
-print("-------- 2 --------")
-
-numbers2 = []
-
-for i in range(3000):
-    if i % 77 == 0:
-        numbers2.append(str(i))
-
-print(numbers2)
-print(*numbers2, sep=",", end="")
-
-
-# Nupieškite kvadratą iš “*”, kurio kraštines sudaro 25“*”.
-print("-------- 3 --------")
-print("-------- 3 --------")
-
-square3 = 25
-
-for i in range(square3):
-    print("*"* square3)
+# print("-------- 2 --------")
+#
+# numbers2 = []
+#
+# for i in range(3000):
+#     if i % 77 == 0:
+#         numbers2.append(str(i))
+#
+# print(numbers2)
+# print(*numbers2, sep=",", end="")
+#
+#
+# # Nupieškite kvadratą iš “*”, kurio kraštines sudaro 25“*”.
+# print("-------- 3 --------")
+# print("-------- 3 --------")
+#
+# square3 = 25
+#
+# for i in range(square3):
+#     print("*"* square3)
 
 # Prieš tai nupieštam kvadratui nupieškite istrižaines zaigzdutę pakeisdami kitu simboliu.
 print("-------- 4 --------")
@@ -58,20 +58,50 @@ square3 = 25
 for i in range(square3):
     for j in range(square3):
         if i == j or i + j == square3 - 1: # istrizaine1 arba istrizaine2
-            print(" ", end="")
+            print(" ", end=f"{j}")
+            # print()
         else:
-            print("*", end="")
+            print("*", end=f"{j}")
+
     print()
 
 
 # Metam monetą. Monetos kritimo rezultatą imituojam random.randint(x,x) funkcija, kur 0 yra herbas, o 1 - skaičius. Monetos metimo rezultatus išvedame į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu herbas. Suprogramuokite tris skirtingus scenarijus kai monetos metimą stabdome:
-# Iškritus herbui;
-# Tris kartus iškritus herbui;
-# Tris kartus iš eilės iškritus herbui;
-print("-------- 5 --------")
 
+print("-------- 5a --------")
+
+# Iškritus herbui;
 while True:
-    dice = random.randint(0,6)
-    print(dice)
-    if dice == 6:
+    coin = random.randint(0,1)
+    if coin == 1:
+        print("S")
+    else:
+        print("H")
         break
+
+# Tris kartus iškritus herbui;
+print("-------- 5b --------")
+count5 = 0
+while True:
+    coin = random.randint(0,1)
+    if coin == 1:
+        print("S")
+    else:
+        print("H")
+        count5 += 1
+    if count5 == 3:
+        break
+
+# Tris kartus iš eilės iškritus herbui;
+print("-------- 5c --------")
+
+inarow = 0
+
+while inarow != 3:
+    coin = random.randint(0,1)
+    if coin == 1:
+        print("S")
+        inarow = 0
+    else:
+        print("H")
+        inarow += 1
