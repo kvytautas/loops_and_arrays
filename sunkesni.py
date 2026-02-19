@@ -54,17 +54,17 @@ import random
 # Prieš tai nupieštam kvadratui nupieškite istrižaines zaigzdutę pakeisdami kitu simboliu.
 # print("-------- 4 --------")
 #
-# square3 = 25
-#
-# for i in range(square3):
-#     for j in range(square3):
-#         if i == j or i + j == square3 - 1: # istrizaine1 arba istrizaine2
-#             print(" ", end=f"{j}")
-#             # print()
-#         else:
-#             print("*", end=f"{j}")
-#
-#     print()
+square3 = 25
+
+for i in range(square3):
+    for j in range(square3):
+        if i == j or i + j == square3 - 1: # istrizaine1 arba istrizaine2
+            print(" ", end=f"{j}")
+            # print()
+        else:
+            print("*", end=f"{j}")
+
+    print()
 
 
 # Metam monetą. Monetos kritimo rezultatą imituojam random.randint(x,x) funkcija, kur 0 yra herbas, o 1 - skaičius. Monetos metimo rezultatus išvedame į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu herbas. Suprogramuokite tris skirtingus scenarijus kai monetos metimą stabdome:
