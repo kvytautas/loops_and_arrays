@@ -82,36 +82,36 @@ import random
 #         break
 
 # Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.
-print("-------- 3 užduotis --------")
-
+# print("-------- 3 užduotis --------")
+#
 letters = ["A", "B", "C", "D"]
-# print(*letters)
-
+# # print(*letters)
+#
 array3 = [random.choice(letters) for i in range(200)]
-
-counta = 0
-countb = 0
-countc = 0
-countd = 0
-for i in range(len(array3)):
-    if array3[i] == "A":
-        counta += 1
-    if array3[i] == "B":
-        countb += 1
-    if array3[i] == "C":
-        countc += 1
-    if array3[i] == "D":
-        countd += 1
-print(*array3)
-print(f'A {counta} vnt,sep = B {countb} vnt, C {countc} vnt, D {countd} vnt')
-
-# Išrūšiuokite 3 uždavinio masyvą pagal abecėlę.
-print("-------- 4 užduotis --------")
-
-array4 = sorted(array3)
-print(*array4)
-
-# Sugeneruokite 3 masyvus pagal 3 uždavinio sąlygą. Sudėkite masyvus, sudėdami atitinkamas reikšmes. (turi gautis masyvas, kurio elementai, kaip pvz atrodo taip: “AAB”, “CBC”, “DDA”, 200 reikšmių). Paskaičiuokite kiek skirtingų reikšmių kombinacijų gavote.
+#
+# counta = 0
+# countb = 0
+# countc = 0
+# countd = 0
+# for i in range(len(array3)):
+#     if array3[i] == "A":
+#         counta += 1
+#     if array3[i] == "B":
+#         countb += 1
+#     if array3[i] == "C":
+#         countc += 1
+#     if array3[i] == "D":
+#         countd += 1
+# print(*array3)
+# print(f'A {counta} vnt,sep = B {countb} vnt, C {countc} vnt, D {countd} vnt')
+#
+# # Išrūšiuokite 3 uždavinio masyvą pagal abecėlę.
+# print("-------- 4 užduotis --------")
+#
+# array4 = sorted(array3)
+# print(*array4)
+#
+# # Sugeneruokite 3 masyvus pagal 3 uždavinio sąlygą. Sudėkite masyvus, sudėdami atitinkamas reikšmes. (turi gautis masyvas, kurio elementai, kaip pvz atrodo taip: “AAB”, “CBC”, “DDA”, 200 reikšmių). Paskaičiuokite kiek skirtingų reikšmių kombinacijų gavote.
 print("-------- 5 užduotis --------")
 
 list1 = []
@@ -156,6 +156,16 @@ print(*number_list1)
 number_list2 = random.sample(range(100, 999), 100)
 print(*number_list2)
 
+# example_array = []
+# counter = 0
+# while len(example_array) < 100:
+#     counter += 1
+#     number = random.randint(100,999)
+#     if number not in example_array:
+#         example_array.append(number)
+# print(sorted(example_array))
+# print(counter)
+
 # Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 6 uždavinio masyve, bet nėra antrame 6 uždavinio masyve.
 print("-------- 7 užduotis --------")
 
@@ -175,3 +185,22 @@ for i in range(len(number_list1)):
     if number_list1[i] in number_list2:
         array_of_matching_values.append(number_list1[i])
 print("1ame ir 2ame kartojasi:",*array_of_matching_values)
+
+# Sugeneruokite 10 skaičių masyvą pagal taisyklę: Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25. Trečias, pirmo ir antro suma. Ketvirtas- antro ir trečio suma. Penktas trečio ir ketvirto suma ir t.t.
+print("-------- 9 užduotis --------")
+
+array9 = []
+
+array9.append(random.randint(5, 25))
+array9.append(random.randint(5, 25))
+
+# generate the rest: each number = sum of previous two
+for i in range(2, 10):
+    array9.append(array9[i-1] + array9[i-2])
+
+print(array9)
+
+
+# Sugeneruokite 101 elemento masyvą su atsitiktiniais skaičiais nuo 0 iki 300. Reikšmes kurios tame masyve yra ne unikalios pergeneruokite iš naujo taip, kad visos reikšmės masyve būtų unikalios. Išrūšiuokite masyvą taip, kad jo didžiausia reikšmė būtų masyvo viduryje, o einant nuo jos link masyvo pradžios ir pabaigos reikšmės mažėtų. Paskaičiuokite pirmos ir antros masyvo dalies sumas (neskaičiuojant vidurinės). Jeigu sumų skirtumas (modulis, absoliutus dydis) yra didesnis nei | 60 | rūšiavimą kartokite. (Kad sumos nesiskirtų viena nuo kitos daugiau nei per 60)
+print("-------- 10 užduotis --------")
+
